@@ -10,16 +10,19 @@
     </div>
     <div class="form-div">
         <form id="loginForm" action="#" method="post">
-            <input type="email" id="account_email" name="account_email" required placeholder="Enter your email address">
+            <input type="email" id="account_email" name="account_email" required
+                placeholder="Enter your email address"><br>
             <label for="account_email">EMAIL</label>
-
+            <br>
             <input type="password" name="account_password" id="account_password" required
                 pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
-            <label for="account_password">PASSWORD</label>
+            <br>
+            <label for="account_password">PASSWORD</label><br>
             <span>Passwords must be at least 12 characters and contain at least 1 number, 1 capital letter and 1
                 special
                 character</span>
-            <button type="submit">Login</button>
+            <br>
+            <button type="submit">LOGIN</button>
 
             <p>No Account? <a href="#">Register here</a>.</p>
         </form>

@@ -1,6 +1,96 @@
 /******* Change Box Model ***************/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+  --text-color: white;
+  --primary-color:  #ed0000;
+  --secondary-color: #071f63;
+  --third-color: #928585;
+}
+
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+*{
+  font-family:"Montserrat", sans-serif;
+}
+
+body{
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.container{
+  margin: auto;
+  padding: 100px 0;
+}
+
+div.logo-div{
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+}
+
+.logo-div img{
+  width: 100%;
+}
+
+.log-in-header{
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.log-in-header p{
+  padding: 0;
+  margin: 0;
+}
+
+form{
+  border-radius: 1px;
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  display: block;
+}
+
+input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+div.form-div span{
+  font-size: 80%;
+}
+
+button{
+  background-color:var(--secondary-color);
+  color: var(--text-color);
+  border: 1px solid var(--third-color);
+  width: 30%;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+button:hover{
+  background-color: var(--text-color);
+  color: var(--secondary-color);
+}
+
+form p a{
+  /* text-decoration: none; */
+  color: var(--text-color);
+}
+
+form p a:hover{
+  color: var(--secondary-color);
 }
