@@ -4,15 +4,18 @@
 
     <body>
         <div id="wrapper">
-            <%- include('../partials/header') %>
-                <%- include('../partials/navigation') %>
+            <% if (loggedIn) { %>
+                <%- include('../partials/header') %>
+                    <%- include('../partials/navigation') %>
+                        <% } %>
 
-                    <main>
-                        <%- body %>
-                    </main>
+                            <main>
+                                <%- body %>
+                            </main>
 
-                    <%- include('../partials/footer') %>
-        </div>
+                            <% if (loggedIn) { %>
+                                <%- include('../partials/footer') %>
+                                    <% } %>
     </body>
 
 </html>
