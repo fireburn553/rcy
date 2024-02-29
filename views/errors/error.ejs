@@ -1,0 +1,14 @@
+<div class="error-div">
+    <div class="logo-div">
+        <img src="../images/site/PRC.png" alt="Philippine Red Cross Logo">
+        <img src="../images/site/RCY.png" alt="Red Cross Youth Logo">
+    </div>
+    <% if (title) { %>
+        <h1 id="error-message-header">
+            <%= title %>
+        </h1>
+        <% } else { res.redirect('/') } %>
+            <h2 id="error-message"><%- message %></h2>
+
+            <a href="/">Return to log-in page</a>
+</div>

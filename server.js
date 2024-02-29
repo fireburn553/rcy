@@ -11,6 +11,8 @@ const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
 const baseController = require("./controllers/baseController")
+const accountRouter = require("./routes/accountRoute")
+const utilities = require("./utilities/")
 
 
 /* ***********************
@@ -25,7 +27,26 @@ app.set("layout", "./layouts/layout") // not at views root
  *************************/
 app.use(static)
 //index route
-app.get("/",baseController.buildLogin)
+app.get("/", utilities.handleErrors(baseController.buildLogin))
+app.use("/account", utilities.handleErrors(accountRouter))
+
+app.use(async (req, res, next) => {
+  next({status: 404, message: 'Sorry, we appear to have lost that page.'})
+})
+/* ***********************
+* Express Error Handler
+* Place after all other middleware
+*************************/
+app.use(async (err, req, res, next) => {
+  console.error(`Error at: "${req.originalUrl}": ${err.message}`)
+  if(err.status == 404){ message = err.message} else {message = 'Oh no! There was a crash. Maybe try a different route?'}
+  res.render("errors/error", {
+    title: err.status || 'Server Error',
+    message,
+    loggedIn: false,
+  })
+})
+
 
 /* ***********************
  * Local Server Information

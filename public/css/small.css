@@ -91,11 +91,19 @@ button:hover{
   color: var(--secondary-color);
 }
 
-form p a{
+form p a, div.error-div a{
   /* text-decoration: none; */
   color: var(--text-color);
 }
 
-form p a:hover{
+form p a:hover, div.error-div a:hover{
   color: var(--secondary-color);
+}
+
+
+div.error-div{
+  background-color: var(--primary-color);
+  text-align: center;
+  margin: auto;
+  padding: 100px 0;
 }
