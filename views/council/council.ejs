@@ -1,0 +1,15 @@
+<!-- council.ejs -->
+<h1>
+    <%= title %>
+</h1>
+
+<%- messages() %>
+    <ul>
+        <% council.forEach(row=> { %>
+            <li>
+                <a href="/account/register/council/<%= row.council_id %>" title="Council <%= row.council_name %>">
+                    <%= row.council_name %>
+                </a>
+            </li>
+            <% }); %>
+    </ul>

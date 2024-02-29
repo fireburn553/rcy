@@ -1,0 +1,17 @@
+<!-- category-reg.ejs -->
+<h1>
+    <%= title %>
+</h1>
+
+<%- messages() %>
+    <%- console.log("printing locals") %>
+        <%- console.log(locals.category) %>
+            <ul>
+                <% category.forEach(row=> { %>
+                    <li>
+                        <a href="/account/register/<%= row.category_id %>" title="Category <%= row.category_name %>">
+                            <%= row.category_name %>
+                        </a>
+                    </li>
+                    <% }); %>
+            </ul>

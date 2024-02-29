@@ -20,7 +20,7 @@
 
 body{
   background-color: var(--primary-color);
-  color: var(--text-color);
+  color: black; /*Need to change to var(--text-color);*/
 }
 
 .container{
