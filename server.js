@@ -10,6 +10,7 @@ const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
+const baseController = require("./controllers/baseController")
 
 
 /* ***********************
@@ -24,9 +25,7 @@ app.set("layout", "./layouts/layout") // not at views root
  *************************/
 app.use(static)
 //index route
-app.get("/", function(req, res){
-  res.render("index", {title: "HOME", loggedIn: false})
-})
+app.get("/",baseController.buildLogin)
 
 /* ***********************
  * Local Server Information
